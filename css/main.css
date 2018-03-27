@@ -1,3 +1,21 @@
 .input-field input[type=search]:focus:not(.browser-default) {
     border-bottom: 2px solid #26a69a;
 }
+.img-container img {
+    display: block;
+    margin: 0 auto;
+}
+.card-content h2 {
+    margin: 0;
+}
+blockquote {
+    border-color: #26a69a;
+    padding: 8px 10px;
+}
+.card-action .btn {
+    display: block;
+    width: 100%;
+}
+i {
+    font-size: 40px;
+}
