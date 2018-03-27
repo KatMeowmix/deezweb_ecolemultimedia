@@ -10,19 +10,23 @@
     <title>DeezWeb</title>
 </head>
 <body>
-    <nav>
-        <ul>
-            <li><a href="#">Recherche</a></li>
-            <li><a href="#">Favoris</a></li>
-        </ul>
-    </nav>
     <div id="dz-root"></div>
-    
+    <div id="deezer-app" class="container">
+        <nav class="green accent-3">
+            <ul>
+                <li><a class="black-text" href="#">Recherche</a></li>
+                <li><a class="black-text" href="#">Favoris</a></li>
+            </ul>
+        </nav>
+        <artist-list></artist-list>
+        <form action=""></form>
+    </div>
     <!-- -->
     <script src="node_modules/jquery/dist/jquery.js"></script>
     <script src="node_modules/materialize-css/dist/js/materialize.min.js"></script>
     <script src="node_modules/vue/dist/vue.js"></script>
     <script src="https://e-cdns-files.dzcdn.net/js/min/dz.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/searchpage.js"></script>
 </body>
 </html>
