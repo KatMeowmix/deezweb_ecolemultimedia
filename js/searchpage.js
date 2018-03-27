@@ -1,46 +1,55 @@
-Vue.component('artist-list', {
+Vue.component('searchpage', {
     template :
         `<div>
-            <ul class="collection with-header">
-                <li class="collection-header"><h4>Page de recherche</h4></li>
-                <li class="collection-item">
+            <div class="collection with-header">
+                <h1 class="collection-header">Page de recherche</h1>
+                <div class="collection-item">
                     <form class="row">
                         <div class="input-field">
-                            <label for="artistSearch">Rechercher un artiste ...</label>
-                            <input type="search" id="artistSearch">
+                            <label for="deezSearch">Rechercher un artiste ...</label>
+                            <input v-model="getInfo" type="text" placeholder="">
                         </div>
                         <button v-on:click.prevent="display()" class="btn waves-effect">Rechercher</button>
                     </form>
-                </li>
-            </ul>
-            <li v-for="(album, index) in artistList" class="card">
-                {{index}}<span>{{artistList}}</span>
-            </li>
+                </div>
+            </div>
+            <div class="container">
+                <div v-for="(artist, index) in artistInfo" class="col s4 card">
+                    <div class="card-image waves-effect waves-block waves-light">
+                        <img class="activator" v-bind:src="artist.album.cover_big">
+                    </div>
+                    <div class="card-content">
+                        <span class="truncate card-title activator grey-text text-darken-4">{{artist.album.title}}</span>
+                        <p><a href="#">This is a link</a></p>
+                    </div>
+                    <div class="card-action">
+                        <a class="waves-effect waves-light indigo darken-4 btn">Ecouter un extrait</a>
+                        <a class="waves-effect waves-light orange accent-4 btn">Consulter l’album</a>
+                        <a class="waves-effect waves-light grey darken-2 btn">Voir la fiche de l’artiste</a>
+                    </div>
+                </div>
+            </div>
         </div>`,
     data : function() {
         return {
-            urlSrc: 'https://cors-anywhere.herokuapp.com/https://api.deezer.com/search?q=',
+            urlSrc:'https://cors-anywhere.herokuapp.com/https://api.deezer.com/search?q=',
+            getInfo:'',
             index: 0,
-            artistList:[
-                {
-                    artist : '',
-                    album : '',
-                }
-            ]
+            artistInfo:[],
+            orderOption:[]
         }
     },
     methods : {
         display: function(){
             $.ajax({
-                url:this.urlSrc+this.mediaData,
+                url:this.urlSrc+this.getInfo,
                 success:function(response){
 
-                    homePage.artistList = response.data;
+                    homePage.artistInfo = response.data;
                     console.log(response.data);
+                    return homePage.artistInfo;
                 }
             })
-            //musicList = response.data[0].album.title;
-            //console.log(musicList);
         }
     }
 });
