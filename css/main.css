@@ -1,0 +1,3 @@
+.input-field input[type=search]:focus:not(.browser-default) {
+    border-bottom: 2px solid #26a69a;
+}

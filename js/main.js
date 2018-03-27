@@ -6,7 +6,7 @@ function loadXMLDoc() {
             this.responseText;
         }
     };
-    xhttp.open("GET", "https://api.deezer.com/version/service/id/method/?parameters", true);
+    xhttp.open("GET", "https://cors-anywhere.herokuapp.com/https://api.deezer.com/version/service/id/method/?parameters", true);
     xhttp.send();
 }
 DZ.init({
