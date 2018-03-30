@@ -55,9 +55,9 @@ Vue.component('recherche', {
                             <i class="small material-icons favorite_border right-align">favorite_border</i>
                         </div>
                         <div class="card-action">
-                            <a @click="trackpage" class="waves-effect waves-light green accent-3 btn">Voir les détails du titre</a>
-                            <a @click="albumpage" class="waves-effect waves-light green accent-3 btn">Consulter l’album</a>
-                            <a @click="artistpage" class="waves-effect waves-light green accent-3 btn">Voir la fiche de l’artiste</a>
+                            <a class="waves-effect waves-light green accent-3 btn">Voir les détails du titre</a>
+                            <a class="waves-effect waves-light green accent-3 btn">Consulter l’album</a>
+                            <a class="waves-effect waves-light green accent-3 btn">Voir la fiche de l’artiste</a>
                         </div>
                     </div>
                 </div>
@@ -81,11 +81,14 @@ Vue.component('trackpage', {
                 <i class="small material-icons favorite_border right-align">favorite_border</i>
             </div>
             <div class="card-action">
-                <a @click="trackpage" class="waves-effect waves-light green accent-3 btn">Voir les détails du titre</a>
-                <a @click="albumpage" class="waves-effect waves-light green accent-3 btn">Consulter l’album</a>
-                <a @click="artistpage" class="waves-effect waves-light green accent-3 btn">Voir la fiche de l’artiste</a>
+                <a class="waves-effect waves-light green accent-3 btn">Voir les détails du titre</a>
+                <a class="waves-effect waves-light green accent-3 btn">Consulter l’album</a>
+                <a class="waves-effect waves-light green accent-3 btn">Voir la fiche de l’artiste</a>
             </div>
-        </div>`
+        </div>`,
+    methods: {
+        displayTrack : function(){}
+    }
 });
 
 var homePage = new Vue({
