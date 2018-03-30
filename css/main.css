@@ -19,3 +19,6 @@ blockquote {
 i {
     font-size: 40px;
 }
+audio {
+    max-width: 100%;
+}

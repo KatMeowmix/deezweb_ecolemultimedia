@@ -19,39 +19,8 @@
                 <li><a class="black-text" href="#">Favoris</a></li>
             </ul>
         </nav>
-        <div>
-            <div class="collection with-header">
-                <h1 class="collection-header">Page de recherche</h1>
-                <div class="collection-item">
-                    <form class="row">
-                        <div class="input-field">
-                            <label for="deezSearch">Rechercher un artiste ...</label>
-                            <input v-model="getInfo" type="text" placeholder="">
-                        </div>
-                        <button v-on:click.prevent="display()" class="btn waves-effect">Rechercher</button>
-                    </form>
-                </div>
-            </div>
-            <div v-for="artist in urlSrc">
-                <div class="row">
-                    <div v-for="(artist, index) in artistInfo" class="col s3 card hoverable">
-                        <div class="card-image img-container">
-                            <img class="activator" v-bind:src="artist.album.cover_big">
-                        </div>
-                        <div class="card-content">
-                            <h2 class="truncate card-title activator">{{artist.album.title}}</h2>
-                            <blockquote class="truncate grey-text text-darken-4">{{artist.artist.name}}</blockquote>
-                            <i class="small material-icons favorite_border right-align">favorite_border</i>
-                            
-                        </div>
-                        <div class="card-action">
-                            <a class="waves-effect waves-light green accent-3 btn">Ecouter un extrait</a>
-                            <a class="waves-effect waves-light green accent-3 btn">Consulter l’album</a>
-                            <a class="waves-effect waves-light green accent-3 btn">Voir la fiche de l’artiste</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <recherche></recherche>
+        <trackpage></trackpage>
         </div>
     </div>
     <!-- -->
@@ -60,6 +29,6 @@
     <script src="node_modules/vue/dist/vue.js"></script>
     <script src="https://e-cdns-files.dzcdn.net/js/min/dz.js"></script>
     <script src="js/main.js"></script>
-    <script src="js/searchpage.js"></script>
+    <script src="js/deezweb.js"></script>
 </body>
 </html>
